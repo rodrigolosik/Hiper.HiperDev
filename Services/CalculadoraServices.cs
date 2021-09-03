@@ -4,10 +4,7 @@ namespace Hiper.HiperDev.Git.Services
 {
     public class CalculadoraServices : ICalculadoraServices
     {
-        public double Dividir(double n1, double n2)
-        {
-            return n1 / n2;
-        }
+        public double Dividir(double n1, double n2) => n1 / n2;
 
         public double Multiplicar(double n1, double n2)
         {
