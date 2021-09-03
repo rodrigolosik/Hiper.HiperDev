@@ -21,8 +21,11 @@ namespace Hiper.HiperDev.Git.Controllers
             Ok(_calculadoraServices.Subtrair(n1, n2));
 
         [HttpGet("dividir/{n1:double}/{n2:double}")]
-        public IActionResult Dividir(double n1, double n2) =>
-            Ok(_calculadoraServices.Dividir(n1, n2));
+        public IActionResult Dividir(double n1, double n2)
+        {
+            if (n2 == 0) return BadRequest("O segundo numero não pode ser zero");
+            return Ok(_calculadoraServices.Dividir(n1, n2));
+        }
 
         [HttpGet("multiplicar/{n1:double}/{n2:double}")]
         public IActionResult Multiplicar(double n1, double n2) =>
